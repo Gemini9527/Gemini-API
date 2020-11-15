@@ -9,6 +9,7 @@ package sensorstreaming;
 
 service SensorStreaming {
     rpc StreamCameraSensor(CameraStreamingRequest) returns (CameraStreamingResponse) {}
+    rpc StreamLidarSensor(LidarStreamingRequest) returns (LidarStreamingResponse) {}
 }
 
 message CameraStreamingRequest {
@@ -18,5 +19,34 @@ message CameraStreamingRequest {
 }
 
 message CameraStreamingResponse {
+    bool success = 1;
+}
+
+message Vector3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message LidarField {
+    Vector3 position = 1;
+    float intensity = 2;
+    uint32 ring = 3;
+    float time = 4;
+
+}
+
+message LidarStreamingRequest {
+    double timeInSeconds = 1;
+    uint32 height = 2;
+    uint32 width = 3;
+    bool isBigEndian = 4;
+    uint32 point_step = 5;
+    uint32 row_step = 6;
+    repeated LidarField LidarFields = 7;
+    bool isDense = 8;
+}
+
+message LidarStreamingResponse {
     bool success = 1;
 }
