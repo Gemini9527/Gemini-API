@@ -45,6 +45,7 @@ message LidarStreamingRequest {
     uint32 row_step = 6;
     repeated LidarField LidarFields = 7;
     bool isDense = 8;
+    bytes data = 9;
 }
 
 message LidarStreamingResponse {
