@@ -22,14 +22,14 @@ message CameraStreamingResponse {
     bool success = 1;
 }
 
-message Vector3 {
+message Vec3 {
     float x = 1;
     float y = 2;
     float z = 3;
 }
 
 message LidarField {
-    Vector3 position = 1;
+    Vec3 position = 1;
     float intensity = 2;
     uint32 ring = 3;
     float time = 4;
