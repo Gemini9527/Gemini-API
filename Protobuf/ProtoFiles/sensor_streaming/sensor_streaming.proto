@@ -70,7 +70,7 @@ message RadarStreamingRequest {
     uint32 numSamples = 4;
     uint32 minIntensity = 5;
     uint32 maxIntensity = 6;
-    bytes rangeStart = 7;
+    bytes intensity = 7;
 }
 
 message RadarStreamingResponse {
