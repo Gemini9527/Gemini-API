@@ -15,8 +15,8 @@ service SensorStreaming {
 
 message CameraStreamingRequest {
     bytes data = 1;
-    int32 dataLength = 2;
-    uint32 timeStamp = 3;
+    double timeStamp = 2;
+    string frame_id = 3;
 }
 
 message CameraStreamingResponse {
@@ -61,17 +61,6 @@ message LidarStreamingRequest {
 message LidarStreamingResponse {
     bool success = 1;
 }
-
-message RadarMetaData {
-    double timeInSeconds = 1;
-    float rangeStart = 2;
-    float rangeIncrement = 3;
-    float azimuth = 4;
-    uint32 numSamples = 5;
-    uint32 minIntensity = 6;
-    uint32 maxIntensity = 7;
-}
-
 
 message RadarStreamingRequest {
     float rangeIncrement = 1;
