@@ -28,14 +28,6 @@ message Vec3 {
     float z = 3;
 }
 
-message LidarField {
-    Vec3 position = 1;
-    float intensity = 2;
-    uint32 ring = 3;
-    float time = 4;
-
-}
-
 message PointField {
     uint32 INT8 = 1;
     uint32 UINT8 = 2;
