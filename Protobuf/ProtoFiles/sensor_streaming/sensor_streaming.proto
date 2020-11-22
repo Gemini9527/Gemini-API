@@ -10,7 +10,8 @@ package sensorstreaming;
 service SensorStreaming {
     rpc StreamCameraSensor(CameraStreamingRequest) returns (CameraStreamingResponse) {}
     rpc StreamLidarSensor(LidarStreamingRequest) returns (LidarStreamingResponse) {}
-}
+    rpc StreamRadarSensor(RadarStreamingRequest) returns (RadarStreamingResponse) {}
+} 
 
 message CameraStreamingRequest {
     bytes data = 1;
@@ -61,3 +62,17 @@ message LidarStreamingResponse {
     bool success = 1;
 }
 
+
+message RadarStreamingRequest {
+    float rangeStart = 1;
+    float rangeIncrement = 2;
+    float azimuth = 3;
+    uint32 numSamples = 4;
+    uint32 minIntensity = 5;
+    uint32 maxIntensity = 6;
+    bytes rangeStart = 7;
+}
+
+message RadarStreamingResponse {
+    bool success = 1;
+}
