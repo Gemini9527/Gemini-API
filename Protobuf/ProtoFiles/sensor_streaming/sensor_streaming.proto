@@ -72,9 +72,17 @@ message RadarMetaData {
     uint32 maxIntensity = 7;
 }
 
+
 message RadarStreamingRequest {
-    repeated RadarMetaData metaData = 1;
-    bytes radarSpokes = 2;
+    float rangeIncrement = 1;
+    float rangeStart = 2;
+    float numSamples = 3;
+    float numSpokes = 4;
+    float minIntensity = 5;
+    float maxIntensity = 6;
+    repeated double timeInSeconds = 7;
+    repeated float azimuth = 8;
+    bytes radarSpokes = 9;
 
 }
 
