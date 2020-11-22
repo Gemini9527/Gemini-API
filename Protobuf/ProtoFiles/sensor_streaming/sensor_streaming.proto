@@ -62,15 +62,20 @@ message LidarStreamingResponse {
     bool success = 1;
 }
 
+message RadarMetaData {
+    double timeInSeconds = 1;
+    float rangeStart = 2;
+    float rangeIncrement = 3;
+    float azimuth = 4;
+    uint32 numSamples = 5;
+    uint32 minIntensity = 6;
+    uint32 maxIntensity = 7;
+}
 
 message RadarStreamingRequest {
-    float rangeStart = 1;
-    float rangeIncrement = 2;
-    float azimuth = 3;
-    uint32 numSamples = 4;
-    uint32 minIntensity = 5;
-    uint32 maxIntensity = 6;
-    bytes intensity = 7;
+    repeated RadarMetaData metaData = 1;
+    bytes radarSpokes = 2;
+
 }
 
 message RadarStreamingResponse {
