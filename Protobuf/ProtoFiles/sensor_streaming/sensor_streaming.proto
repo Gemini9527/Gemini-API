@@ -76,10 +76,10 @@ message RadarMetaData {
 message RadarStreamingRequest {
     float rangeIncrement = 1;
     float rangeStart = 2;
-    float numSamples = 3;
-    float numSpokes = 4;
-    float minIntensity = 5;
-    float maxIntensity = 6;
+    uint32 numSamples = 3;
+    uint32 numSpokes = 4;
+    uint32 minIntensity = 5;
+    uint32 maxIntensity = 6;
     repeated double timeInSeconds = 7;
     repeated float azimuth = 8;
     bytes radarSpokes = 9;
