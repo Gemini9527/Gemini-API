@@ -16,7 +16,9 @@ service SensorStreaming {
 message CameraStreamingRequest {
     bytes data = 1;
     double timeStamp = 2;
-    string frame_id = 3;
+    uint32 width = 3;
+    uint32 height = 4;
+    string frame_id = 5;
 }
 
 message CameraStreamingResponse {
